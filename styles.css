@@ -46,3 +46,69 @@
     font-family: "customfont", sans-serif;
   }
   
+  /* new styles for input fields */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  .form-control:focus {
+    box-shadow: none;
+    border-color: #6c757d;
+  }
+  .form-label {
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+  .form-control {
+    border-radius: 0;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    height: 2.5rem;
+  }
+  .form-control::-webkit-input-placeholder {
+    color: #a6a6a6;
+  }
+  .form-control:-ms-input-placeholder {
+    color: #a6a6a6;
+  }
+  .form-control::-ms-input-placeholder {
+    color: #a6a6a6;
+  }
+  .form-control::placeholder {
+    color: #a6a6a6;
+  }
+  
+  /* new styles for task list */
+  .task-item {
+    border-bottom: 1px solid #dee2e6;
+    padding: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+  }
+  .task-item .form-check-input {
+    margin-right: 1rem;
+  }
+  .task-item .task-name {
+    flex: 1;
+    margin: 0;
+  }
+  .task-item .task-date {
+    color: #a6a6a6;
+    font-size: 0.8rem;
+  }
+  
+  #todo-list .due-date, .task {
+    color: #6c757d;
+    margin-right: 10px;
+  }
+  
+  #todo-list .due-time {
+    color: #6c757d;
+    margin-right: 10px;
+  }
+  
+  #todo-list .delete-btn {
+    color: #dc3545;
+    cursor: pointer;
+  }
