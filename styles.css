@@ -1,0 +1,48 @@
+@font-face {
+    font-family: "customfont";
+    src: url("./fonts/titlefont.ttf") format("woff2");
+  }
+  
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .card {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  }
+  
+  .form-label {
+    color: #212529;
+  }
+  
+  .form-control {
+    border: none;
+    background-color: #f8f9fa;
+    color: #343a40;
+  }
+  
+  .btn-primary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    margin-top: 10px; /* added margin */
+  }
+  
+  .btn-primary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+  }
+  
+  .list-group-item {
+    background-color: #f8f9fa;
+    color: #343a40;
+    border: none;
+  }
+  
+  .list-group-item:hover {
+    background-color: #e9ecef;
+  }
+  
+  h1 {
+    font-family: "customfont", sans-serif;
+  }
+  
