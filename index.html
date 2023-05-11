@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List App</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-dark">
+    <div class="container mt-5">
+        <div class="card bg-light text-dark">
+            <div class="card-header">
+                <h1 class="mb-0">To-Do List App</h1>
+            </div>
+            <div class="card-body">
+                <form id="todo-form">
+                    <div class="form-group">
+                        <label for="todo-input" class="form-label">Add Task</label>
+                        <input type="text" class="form-control" id="todo-input" placeholder="Enter task here">
+                    </div>
+                    <div class="form-group d-flex">
+                        <div class="flex-grow-1">
+                            <label for="due-date" class="form-label">Due Date</label>
+                            <input type="date" class="form-control" id="due-date">
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <label for="due-time" class="form-label">Due Time</label>
+                            <input type="time" class="form-control" id="due-time">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </form>
+                <hr>
+                <ul id="todo-list" class="list-group">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for displaying task details -->
+    <div class="modal fade" id="taskDetailsModal" tabindex="-1" aria-labelledby="taskDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="taskDetailsModalLabel">Task Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 id="details-task-name"></h4>
+                    <p id="details-task-due-date"></p>
+                    <p id="details-task-due-time"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script id="task-template" type="text/x-handlebars-template">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{task}}
+            <div>
+                <button type="button" class="btn btn-sm btn-primary details-button" data-bs-toggle="modal" data-bs-target="#taskDetailsModal">Details</button>
+                <button type="button" class="btn btn-sm btn-danger delete-button">Delete</button>
+            </div>
+        </li>
+    </script>
+</body>
+</html>
