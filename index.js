@@ -1,12 +1,12 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain, screen } = require('electron');
 const path = require('path');
 
 let mainWindow;
 
 function createWindow() {
     mainWindow = new BrowserWindow({
-      width: 800,
-      height: 600,
+      minWidth: 1080,
+      minHeight: 720,
       webPreferences: {
         nodeIntegration: true,
         contextIsolation: false,
@@ -15,6 +15,10 @@ function createWindow() {
       // other options
   autoHideMenuBar: true
     });
+
+      // Maximize the window on launch
+    mainWindow.maximize();
+
   
     mainWindow.loadFile(path.join(__dirname, 'index.html'));
   

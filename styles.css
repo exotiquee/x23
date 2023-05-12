@@ -1,148 +1,230 @@
 @font-face {
-    font-family: "customfont";
-    src: url("./fonts/titlefont.ttf") format("woff2");
+  font-family: "customfont";
+  src: url("./fonts/titlefont.ttf") format("woff2");
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  margin-left: 200px;
+}
+
+.form-label {
+  color: #212529;
+}
+
+.form-control {
+  border: none;
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+.btn-primary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  margin-top: 10px; /* added margin */
+}
+
+.btn-primary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+.list-group-item {
+  background-color: #f8f9fa;
+  color: #343a40;
+  border: none;
+}
+
+.list-group-item:hover {
+  background-color: #e9ecef;
+}
+
+h1 {
+  font-family: "customfont", sans-serif;
+}
+
+/* new styles for input fields */
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-control:focus {
+  box-shadow: none;
+  border-color: #6c757d;
+}
+.form-label {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.form-control {
+  border-radius: 0;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  height: 2.5rem;
+}
+.form-control::-webkit-input-placeholder {
+  color: #a6a6a6;
+}
+.form-control:-ms-input-placeholder {
+  color: #a6a6a6;
+}
+.form-control::-ms-input-placeholder {
+  color: #a6a6a6;
+}
+.form-control::placeholder {
+  color: #a6a6a6;
+}
+
+/* new styles for task list */
+.task-item {
+  border-bottom: 1px solid #dee2e6;
+  padding: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+}
+.task-item .form-check-input {
+  margin-right: 1rem;
+}
+.task-item .task-name {
+  flex: 1;
+  margin: 0;
+}
+.task-item .task-date {
+  color: #a6a6a6;
+  font-size: 0.8rem;
+}
+
+#todo-list .due-date, .task {
+  color: #6c757d;
+  margin-right: 10px;
+}
+
+#todo-list .due-time {
+  color: #6c757d;
+  margin-right: 10px;
+}
+
+#todo-list .delete-btn {
+  color: #dc3545;
+  cursor: pointer;
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out;
+  color: red;
+}
+
+input.shake::placeholder {
+  color: red;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
   }
-  
-  body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  25% {
+    transform: translateX(10px);
   }
-  
-  .card {
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  50% {
+    transform: translateX(-10px);
   }
-  
-  .form-label {
-    color: #212529;
+  75% {
+    transform: translateX(10px);
   }
-  
-  .form-control {
-    border: none;
-    background-color: #f8f9fa;
-    color: #343a40;
+  100% {
+    transform: translateX(0);
   }
-  
-  .btn-primary {
-    background-color: #6c757d;
-    border-color: #6c757d;
-    margin-top: 10px; /* added margin */
-  }
-  
-  .btn-primary:hover {
-    background-color: #5a6268;
-    border-color: #545b62;
-  }
-  
-  .list-group-item {
-    background-color: #f8f9fa;
-    color: #343a40;
-    border: none;
-  }
-  
-  .list-group-item:hover {
-    background-color: #e9ecef;
-  }
-  
-  h1 {
-    font-family: "customfont", sans-serif;
-  }
-  
-  /* new styles for input fields */
-  .form-group {
-    margin-bottom: 1rem;
-  }
-  .form-control:focus {
-    box-shadow: none;
-    border-color: #6c757d;
-  }
-  .form-label {
-    font-weight: bold;
-    font-size: 0.9rem;
-  }
-  .form-control {
-    border-radius: 0;
-    padding: 0.5rem;
-    font-size: 0.9rem;
-    height: 2.5rem;
-  }
-  .form-control::-webkit-input-placeholder {
-    color: #a6a6a6;
-  }
-  .form-control:-ms-input-placeholder {
-    color: #a6a6a6;
-  }
-  .form-control::-ms-input-placeholder {
-    color: #a6a6a6;
-  }
-  .form-control::placeholder {
-    color: #a6a6a6;
-  }
-  
-  /* new styles for task list */
-  .task-item {
-    border-bottom: 1px solid #dee2e6;
-    padding: 1rem;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    display: flex;
-    align-items: center;
-  }
-  .task-item .form-check-input {
-    margin-right: 1rem;
-  }
-  .task-item .task-name {
-    flex: 1;
-    margin: 0;
-  }
-  .task-item .task-date {
-    color: #a6a6a6;
-    font-size: 0.8rem;
-  }
-  
-  #todo-list .due-date, .task {
-    color: #6c757d;
-    margin-right: 10px;
-  }
-  
-  #todo-list .due-time {
-    color: #6c757d;
-    margin-right: 10px;
-  }
-  
-  #todo-list .delete-btn {
-    color: #dc3545;
-    cursor: pointer;
-<<<<<<< HEAD
-=======
+}
+
+input.error::-webkit-input-placeholder {
+  color: red;
+}
+
+input.error:-moz-placeholder {
+  color: red;
+}
+
+input.error::-moz-placeholder {
+  color: red;
+}
+
+input.error:-ms-input-placeholder {
+  color: red;
+}
+
+  #logo {
+    display: block;
+    margin: auto;
   }
 
-  .shake {
-    animation: shake 0.5s ease-in-out;
-    color: red;
+  #left-bar {
+    background-color: #f3f3f3;
+    width: 150px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow-y: auto;
   }
   
-  input.shake::placeholder {
-    color: red;
+  #left-bar .option {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    border-left: 4px solid transparent;
   }
   
-  @keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(10px); }
-    50% { transform: translateX(-10px); }
-    75% { transform: translateX(10px); }
-    100% { transform: translateX(0); }
+  #left-bar .option:hover {
+    background-color: #dcdcdc;
+  }
+  
+  #left-bar .selected  {
+    background-color: #dcdcdc;
+    border-left: 4px solid #4a90e2;
   }
   
   
-  input.error::-webkit-input-placeholder {
-    color: red;
+  #loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #575657;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+    z-index: 2;
   }
-  input.error:-moz-placeholder {
-    color: red;
+  
+  #app {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    z-index: 1;
   }
-  input.error::-moz-placeholder {
-    color: red;
+  
+  #logoloading {
+    position: absolute;
+    top: 50%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: fade-in 1.5s ease-in-out forwards;
+    z-index: 0;
   }
-  input.error:-ms-input-placeholder {
-    color: red;
->>>>>>> 1db65bcd4f8943d51718c4a74f0911523cfb6673
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }

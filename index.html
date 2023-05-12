@@ -2,18 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>To-Do List App</title>
+    <title>
+        x23
+    </title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
+
+<div id="loading-screen">
+    <img id="logoloading" src="./png/logo.png" alt="Your logo" draggable="false">
+  </div>
+
+<div id="app">
 <body class="bg-dark">
     <div class="container mt-5">
         <div class="card bg-light text-dark">
             <div class="card-header">
-                <h1 class="mb-0">To-Do List App</h1>
+                <img src="./png/logo.png" alt="Your Logo" width="100" height="100" id="logo">
             </div>
             <div class="card-body">
                 <form id="todo-form">
@@ -56,6 +64,16 @@
             </div>
         </div>
     </div>
+
+    <div id="left-bar">
+        <div class="option selected" id="all-tasks">All tasks</div>
+        <div class="option" id="due-today">Due today</div>
+        <div class="option" id="due-soon">Due soon</div>
+      </div>
+      </div>
+    </div>
+      
+      
 
     <script src="app.js"></script>
     <script id="task-template" type="text/x-handlebars-template">
