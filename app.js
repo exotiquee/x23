@@ -14,7 +14,7 @@ function renderTasks() {
       'list-group-item d-flex justify-content-between align-items-center';
     li.innerHTML = `
       <span>${task.name}</span>
-      <span>${task.dueDate ? task.dueDate + ' ' + task.dueTime : ''}</span>
+      <span>on ${task.dueDate ? task.dueDate + ' ' + task.dueTime : ''}</span>
       <button class="btn btn-danger delete-task" data-index="${index}">Delete</button>
     `;
     list.appendChild(li);
@@ -98,6 +98,21 @@ const today = new Date();
 const todayString = today.toISOString().substr(0, 10);
 dateInput.value = todayString;
 
+// Get the current time
+var currentTime = new Date();
+
+// Get the time components (hours and minutes)
+var hours = currentTime.getHours();
+var minutes = currentTime.getMinutes();
+
+// Format the time as a string with leading zeros if needed
+var formattedTime = (hours < 10 ? '0' : '') + hours + ':' + (minutes < 10 ? '0' : '') + minutes;
+
+// Set the value of the time input
+document.getElementById('due-time').value = formattedTime;
+
+
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   addTask();
@@ -177,6 +192,8 @@ setTimeout(() => {
 }, 2000);
 
 document.addEventListener('DOMContentLoaded', () => {
-  const logoElement = document.getElementById('loading-screen');
-  logoElement.style.zIndex = '0';
+  const logobackgroundElement = document.getElementById('loading-screen');
+  logobackgroundElement.style.zIndex = '-2';
+  const logoElement = document.getElementById('logoloading');
+  logoElement.style.zIndex = '-2';
 });

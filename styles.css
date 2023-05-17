@@ -5,6 +5,7 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #212529;
 }
 
 .card {
@@ -12,36 +13,152 @@ body {
   margin-left: 200px;
 }
 
-.form-label {
-  color: #212529;
+.card-body {
+  background-color: #222;
 }
 
+.card-header {
+  margin-bottom: 10px;
+  background-image: url('https://static.pexels.com/photos/414171/pexels-photo-414171.jpeg');
+  background-size:cover;
+        -webkit-animation: slidein 100s;
+        animation: slidein 100s;
+
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;  
+}
+
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200');
+
+@-webkit-keyframes slidein {
+from {background-position: top; background-size:3000px; }
+to {background-position: -100px 0px;background-size:2750px;}
+}
+
+@keyframes slidein {
+from {background-position: top;background-size:3000px; }
+to {background-position: -100px 0px;background-size:2750px;}
+
+}
+
+
+
+.center
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(75, 75, 250, 0.3);
+  border-radius: 3px;
+}
+.center h1{
+  text-align:center;
+  color:white;
+  font-family: 'Source Code Pro', monospace;
+  text-transform:uppercase;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
+.container {
+  margin-top: 2rem; /* Adjust the top margin as needed */
+  margin-right: 2rem;
+  margin-bottom: 2rem; /* Adjust the bottom margin as needed */
+  margin-left: auto;
+}
+
+.todo-form {
+  margin-left: 10px;
+}
+
+
 .form-control {
+  border-radius: 4px;
   border: none;
-  background-color: #f8f9fa;
-  color: #343a40;
+  background-color: #333;
+  color: #fff;
+  padding: 8px 12px;
+  font-size: 14px;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #819f64;
+}
+
+.form-control::placeholder {
+  color: #999;
 }
 
 .btn-primary {
-  background-color: #6c757d;
-  border-color: #6c757d;
-  margin-top: 10px; /* added margin */
+  background-color: #819f64;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
 }
 
 .btn-primary:hover {
-  background-color: #5a6268;
-  border-color: #545b62;
+  background-color: #6b864e;
 }
 
+.btn-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #819f64;
+}
+
+.btn-primary:active {
+  background-color: #819f64;
+}
+
+
+
+
 .list-group-item {
-  background-color: #f8f9fa;
-  color: #343a40;
+  background-color: #222;
+  color: #fff;
   border: none;
+  padding: 1rem;
+  font-size: 25px;
+  transition: background-color 0.3s ease;
 }
 
 .list-group-item:hover {
-  background-color: #e9ecef;
+  background-color: #333;
 }
+
+.list-group-item .btn {
+  font-size: 12px;
+  padding: 0.25rem 0.5rem;
+  margin-left: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.list-group-item .btn:hover {
+  background-color: #555;
+}
+
 
 h1 {
   font-family: "customfont", sans-serif;
@@ -51,31 +168,13 @@ h1 {
 .form-group {
   margin-bottom: 1rem;
 }
-.form-control:focus {
-  box-shadow: none;
-  border-color: #6c757d;
-}
 .form-label {
-  font-weight: bold;
-  font-size: 0.9rem;
-}
-.form-control {
-  border-radius: 0;
-  padding: 0.5rem;
-  font-size: 0.9rem;
-  height: 2.5rem;
-}
-.form-control::-webkit-input-placeholder {
-  color: #a6a6a6;
-}
-.form-control:-ms-input-placeholder {
-  color: #a6a6a6;
-}
-.form-control::-ms-input-placeholder {
-  color: #a6a6a6;
-}
-.form-control::placeholder {
-  color: #a6a6a6;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0.8;
 }
 
 /* new styles for task list */
@@ -99,6 +198,10 @@ h1 {
   font-size: 0.8rem;
 }
 
+#todo-list{
+  font-family: 'Montserrat', sans-serif;
+}
+
 #todo-list .due-date, .task {
   color: #6c757d;
   margin-right: 10px;
@@ -112,6 +215,7 @@ h1 {
 #todo-list .delete-btn {
   color: #dc3545;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .shake {
@@ -160,10 +264,27 @@ input.error:-ms-input-placeholder {
   #logo {
     display: block;
     margin: auto;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  #logo:hover {
+    transform: scale(1.1);
   }
 
   #left-bar {
-    background-color: #f3f3f3;
+    background-image: url('https://static.pexels.com/photos/414171/pexels-photo-414171.jpeg');
+    background-size:cover;
+          -webkit-animation: slidein 100s;
+          animation: slidein 100s;
+  
+          -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  
+          -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  
+          -webkit-animation-direction: alternate;
+          animation-direction: alternate;  
     width: 150px;
     height: 100%;
     position: fixed;
@@ -171,6 +292,7 @@ input.error:-ms-input-placeholder {
     left: 0;
     z-index: 1;
     overflow-y: auto;
+    font-family: 'Montserrat', sans-serif;
   }
   
   #left-bar .option {
@@ -182,11 +304,11 @@ input.error:-ms-input-placeholder {
   }
   
   #left-bar .option:hover {
-    background-color: #dcdcdc;
+    background-color: rgba(64, 64, 64, 0.15)
   }
   
   #left-bar .selected  {
-    background-color: #dcdcdc;
+    background-color: rgba(64, 64, 64, 0.15);
     border-left: 4px solid #4a90e2;
   }
   
@@ -197,10 +319,21 @@ input.error:-ms-input-placeholder {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #575657;
+    background-image: url('https://static.pexels.com/photos/414171/pexels-photo-414171.jpeg');
+    background-size:cover;
+          -webkit-animation: slidein 100s;
+          animation: slidein 100s;
+  
+          -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  
+          -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  
+          -webkit-animation-direction: alternate;
+          animation-direction: alternate;  
     opacity: 1;
     transition: opacity 0.5s ease-out;
-    z-index: 2;
   }
   
   #app {
